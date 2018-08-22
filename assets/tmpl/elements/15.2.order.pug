@@ -210,3 +210,111 @@ mixin ec-alert-warning
       img(src='/moc/icon/exclamation-white.svg')
     +e.text
       | 配送方法の異なる商品が含まれているため、お届け先は複数となります。
+
+mixin ec-orderRoleEdit
+  +b.ec-orderRole
+    +e.detail
+      .ec-orderOrder
+        ul.ec-borderedList
+          li: .ec-imageGrid
+            .ec-imageGrid__img: img(src="http://demo3.ec-cube.net/upload/save_image/0701113537_559351f959620.jpeg")
+            .ec-imageGrid__content
+              p ホーローマグ
+              p ¥ 1,728 x 1
+                span.ec-imageGrid__contentTotal 小計：¥ 9,180
+          li: .ec-imageGrid
+            .ec-imageGrid__img: img(src="http://demo3.ec-cube.net/upload/save_image/0701113537_559351f959620.jpeg")
+            .ec-imageGrid__content
+              p ホーローマグ
+              p ¥ 1,728 x 1
+                span.ec-imageGrid__contentTotal 小計：¥ 9,180
+        .ec-inlineBtn 数量を変更または削除する
+      +b.ec-orderAccount
+        .ec-rectHeading
+          h2 お客様情報
+
+        .text-right
+          a.ec-inlineBtn 変更
+        .ec-halfInput
+          input(type="text" placeholder="球部")
+          input(type="text" placeholder="太郎")
+          span 様
+        .ec-halfInput
+          input(type="text" placeholder="キュウブ")
+          input(type="text" placeholder="タロウ")
+        .ec-zipInput
+          span 〒
+          input(type="text" placeholder="1231234")
+        .ec-input
+          input(type="text" placeholder="東京都")
+          input(type="text" placeholder="千代田区神田神保町")
+          input(type="text" placeholder="1-3-5")
+        .ec-halfInput
+          input(type="text" placeholder="00000000000")
+        .ec-input
+          input(type="text" placeholder="eccube-sample@sample.com")
+          input(type="text" placeholder="ECCUBE株式会社")
+      .ec-orderDelivery
+        .ec-rectHeading
+          h2 配送情報
+        .ec-orderDelivery__title お届け先
+          .ec-orderDelivery__change
+            a.ec-inlineBtn 変更
+        .ec-orderDelivery__item
+          ul.ec-borderedList
+            li: .ec-imageGrid
+              .ec-imageGrid__img: img(src="http://demo3.ec-cube.net/upload/save_image/0701113537_559351f959620.jpeg")
+              .ec-imageGrid__content
+                p ホーローマグ
+                p ¥ 1,728 x 1
+                  span 小計：¥ 9,180
+            li: .ec-imageGrid
+              .ec-imageGrid__img: img(src="http://demo3.ec-cube.net/upload/save_image/0701113537_559351f959620.jpeg")
+              .ec-imageGrid__content
+                p ホーローマグ
+                p ¥ 1,728 x 1
+                  span 小計：¥ 9,180
+        .ec-orderDelivery__address
+          p 球部 太郎  (キューブ タロウ) 様
+          p 〒123-1234 東京都千代田区神田神保町1-3-5
+          p 000-0000-0000
+        .ec-orderDelivery__actions
+          .ec-selects
+            .ec-select
+              label 配送方法
+              select
+                option サンプル業者
+            .ec-select.ec-select__delivery
+              label 配送方法
+              select
+                option 指定なし
+            .ec-select.ec-select__time
+              label お届け時間
+              select
+                option 指定なし
+        .ec-orderDelivery__edit
+          a.ec-inlineBtn(href="/moc/guest/cart4/add_address/") お届け先を追加する
+      .ec-orderPayment
+        .ec-rectHeading
+          h2 お支払方法
+        .ec-blockRadio
+          label
+            input(type="radio")
+            span 郵便振替
+          label
+            input(type="radio")
+            span 現金書留
+          label
+            input(type="radio")
+            span 銀行振込
+          label
+            input(type="radio")
+            span 代金引換
+      .ec-orderConfirm
+        .ec-rectHeading
+          h2 お問い合わせ
+        .ec-input
+          textarea(rows=6 placeholder="お問い合わせ事項がございましたら、こちらにご入力ください。(3000文字まで)")
+    .ec-orderRole__summary
+      include /assets/tmpl/elements/7.3.cart.pug
+      +ec-totalBox
