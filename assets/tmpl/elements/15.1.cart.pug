@@ -155,3 +155,29 @@ mixin ec-cartRowOnly
                         img(src='/moc/icon/plus-dark.svg', alt='increase')
         li.ec-cartRow__subtotalColumn
             .ec-cartRow__sutbtotal ¥ 4,320
+
+mixin ec-cartRoleWarning
+    +b.ec-cartRole
+        +e.progress
+            +ec-progress
+        +e.error
+            +b.ec-alert-warning
+                +e.icon
+                    img(src='/moc/icon/exclamation-white.svg')
+                +e.text
+                    | 同時購入できない商品がカートに含まれています。
+                    br
+                    | お手数ですが、個別に購入手続きをお願い致します。
+        +e.cart
+            +ec-cartTable
+        +e.actions
+            +e.total 合計：
+                +e.SPAN.totalAmount ￥1,296
+            a(href="/moc/guest/cart2").ec-blockBtn--action レジに進む
+        +e.cart
+            +ec-cartTable
+        +e.actions
+            +e.total 合計：
+                +e.SPAN.totalAmount ￥1,296
+            a(href="/moc/guest/cart2").ec-blockBtn--action レジに進む
+            a(href="").ec-blockBtn--cancel お買い物を続ける
